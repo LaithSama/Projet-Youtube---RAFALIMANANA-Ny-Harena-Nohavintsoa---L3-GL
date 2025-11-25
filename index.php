@@ -9,34 +9,65 @@
 </head>
 <body>
     <div class="logo">
-        <h1>Youtube</h1>
+        <h1><i class="fa-solid fa-sliders" style="color: #000000;"></i><i class="fa-brands fa-youtube"></i>YouTube</h1>
         <form method="POST">
-            <input type="serarch" placehoder="Rechercher ...">
+            <input type="search" placeholder="Rechercher ...">
             <button type="submit">Rechercher</button>
         </form>
         <div class="image">
-            <img src="assets\IMG\images.png" alt="icoYoutube">
+            <img src="assets\IMG\utilisateur.jpg" alt="User">
         </div>
     </div>
     <div class="conteneur-principal">
         <div class="conteneur">
             <nav>
                 <ul>
-                    <li><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
-                    <li><i class="fa-solid fa-video"></i><a href="#">Shorts</a></li>
-                    <li><i class="fa-solid fa-bell"></i><a href="#">Abonemments</a></li>
+                    <li><a href="#"><i class="fa-solid fa-house" style="color: #000000;"></i>Accueil</a></li>
+                    <li><a href="#"><i class="fa-solid fa-video" style="color: #000000;"></i>Shorts</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bell" style="color: #000000;"></i>Abonemments</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="video">
-            <?php 
-                    $liste = array("Tous", "Musique", "Mix", "Rap Français");
-                    for ($i = 0; $i < count($liste); $i++) {
+        <div class="content-right">
+            <div class="video">
+                <?php 
+                        $liste = array("Tous", "Musique", "Mix", "Rap Français");
+                        for ($i = 0; $i < count($liste); $i++) {
+                            ?>
+                            <button><?php echo $liste[$i] ?></button>
+                            <?php
+                        }
+                ?>
+            </div>
+            <div class="videos-container">
+                <?php 
+                    $videos = array(
+                        array("titre" => "J'infiltre une base dans Ghost Recon Breakpoint", "img" => "assets/IMG/img1.jpg"),
+                        array("titre" => "Première fois sur Ghost Recon Breakpoint", "img" => "assets/IMG/img2.jpg"),
+                        array("titre" => "Moi et mon esquad on se prépare", "img" => "assets/IMG/img3.jpg"),
+                        array("titre" => "Première fois en multijoueur - ft.DevilHax", "img" => "assets/IMG/img4.jpg"),
+                        array("titre" => "Blur PC 240 FPS ULTRA - Gameplay no commentary", "img" => "assets/IMG/img5.jpg"),
+                        array("titre" => "Call Of Duty Black ops III - First Mission", "img" => "assets/IMG/img6.jpg"),
+                        array("titre" => "Tekken 7 - Top 3 des meilleurs personnage du jeux", "img" => "assets/IMG/img7.jpg"),
+                        array("titre" => "AC Black Flags - Pourquoi est ce que c'est le meilleur de tout assassins creed ?", "img" => "assets/IMG/img8.jpg"),
+                    );
+                    foreach ($videos as $video) {
                         ?>
-                        <button><?php echo $liste[$i] ?></button>
+                        <div class="video-card-yt">
+                            <div class="video-thumb-yt">
+                                <img src="<?php echo $video['img']; ?>" alt="<?php echo $video['titre']; ?>">
+                            </div>
+                            <div class="video-info-yt">
+                                <div class="video-avatar-yt">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </div>
+                                <h3 class="video-title-yt"><?php echo $video['titre']; ?></h3>
+                            </div>
+                        </div>
                         <?php
                     }
-            ?>
+                ?>
+            </div>
         </div>
     </div>
     
