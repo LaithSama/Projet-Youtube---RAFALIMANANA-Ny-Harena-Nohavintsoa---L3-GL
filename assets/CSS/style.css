@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo .image img {
+    width: 30px;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.conteneur {
+    display: flex;
+    max-width: 150px;
+    height: auto;
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+
+.conteneur ul {
+    list-style: none;
+}
+
+.conteneur ul li a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+.conteneur ul li a:hover {
+    font-weight: bold;
+    font-size: 20px;
+}
