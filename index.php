@@ -1,9 +1,14 @@
+<?php
+    require "Traitement.php";
+    connexion();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo PhP</title>
+    <title>Youtube</title>
     <link rel="stylesheet" href="assets\CSS\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -42,20 +47,20 @@
             <div class="videos-container">
                 <?php 
                     $videos = array(
-                        array("titre" => "J'infiltre une base dans Ghost Recon Breakpoint", "img" => "assets/IMG/img1.jpg"),
-                        array("titre" => "Première fois sur Ghost Recon Breakpoint", "img" => "assets/IMG/img2.jpg"),
-                        array("titre" => "Moi et mon esquad on se prépare", "img" => "assets/IMG/img3.jpg"),
-                        array("titre" => "Première fois en multijoueur - ft.DevilHax", "img" => "assets/IMG/img4.jpg"),
-                        array("titre" => "Blur PC 240 FPS ULTRA - Gameplay no commentary", "img" => "assets/IMG/img5.jpg"),
-                        array("titre" => "Call Of Duty Black ops III - First Mission", "img" => "assets/IMG/img6.jpg"),
-                        array("titre" => "Tekken 7 - Top 3 des meilleurs personnage du jeux", "img" => "assets/IMG/img7.jpg"),
-                        array("titre" => "AC Black Flags - Pourquoi est ce que c'est le meilleur de tout assassins creed ?", "img" => "assets/IMG/img8.jpg"),
+                        array("Id" => "1", "titre" => "J'infiltre une base dans Ghost Recon Breakpoint", "img" => "assets/IMG/img1.jpg"),
+                        array("Id" => "2", "titre" => "Première fois sur Ghost Recon Breakpoint", "img" => "assets/IMG/img2.jpg"),
+                        array("Id" => "3", "titre" => "Moi et mon esquad on se prépare", "img" => "assets/IMG/img3.jpg"),
+                        array("Id" => "4", "titre" => "Première fois en multijoueur - ft.DevilHax", "img" => "assets/IMG/img4.jpg"),
+                        array("Id" => "5", "titre" => "Blur PC 240 FPS ULTRA - Gameplay no commentary", "img" => "assets/IMG/img5.jpg"),
+                        array("Id" => "6", "titre" => "Call Of Duty Black ops III - First Mission", "img" => "assets/IMG/img6.jpg"),
+                        array("Id" => "7", "titre" => "Tekken 7 - Top 3 des meilleurs personnage du jeux", "img" => "assets/IMG/img7.jpg"),
+                        array("Id" => "8", "titre" => "AC Black Flags - Pourquoi est ce que c'est le meilleur de tout assassins creed ?", "img" => "assets/IMG/img8.jpg"),
                     );
                     foreach ($videos as $video) {
                         ?>
                         <div class="video-card-yt">
                             <div class="video-thumb-yt">
-                                <img src="<?php echo $video['img']; ?>" alt="<?php echo $video['titre']; ?>">
+                                <a href="Redirection.php?Id=<?php echo $video["Id"]; ?>"><img src="<?php echo $video['img']; ?>" alt="<?php echo $video['titre']; ?>"></a>
                             </div>
                             <div class="video-info-yt">
                                 <div class="video-avatar-yt">
